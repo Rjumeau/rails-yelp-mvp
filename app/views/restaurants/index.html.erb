@@ -1,0 +1,11 @@
+<h1>List of restaurants</h1>
+<div class="card-container">
+      <% @restaurants.each do |restaurant| %>
+          <div class="card" style="width: 18rem;">
+          <h2 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant)%></h2>
+          <p class="card-subtitle text-muted"><%= restaurant.category %></p>
+          <p class="card-text p-y-1"><%= restaurant.address %></p>
+          <p><%= link_to "Leave a review", new_restaurant_review_path(restaurant) %></p> </div>
+        <% end %>
+  <button type="button" class="btn btn-primary"><%= link_to "", new_restaurant_path %>Add a new restaurant</button>
+</div>
